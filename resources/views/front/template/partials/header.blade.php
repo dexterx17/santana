@@ -20,8 +20,8 @@
     <div class="header top-menu " id="header">
         <div class="header-box first pull-left">
             <div class="logo-mini pull-left">
-                <a class="go-up" href="index.html">
-                    <img alt="The Image" class="svg logo-img" height="40" src="images/logo-accent.svg" width="60">
+                <a class="go-up" href="{{ url('/') }}">
+                    <img alt="The Image" class="svg logo-img" height="40" src="{{ asset('img/logo_black.png') }}" width="120">
                     </img>
                 </a>
             </div>
@@ -43,7 +43,7 @@
                     <nav class="collapse collapsing navbar-collapse">
                         <ul class="nav navbar-nav navbar-center">
                             <li class="slide-link">
-                                <a class="default-hovered" href="#services">
+                                <a class="default-hovered" href="#nosotros">
                                     Nosotros
                                 </a>
                             </li>

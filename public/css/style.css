@@ -5094,7 +5094,7 @@ header.top-menu {
 }
 /* line 616, ../sass/style.scss */
 .primary-banner h1 {
-  color: white;
+  color: black;
   margin-bottom: 6px;
   text-transform: uppercase;
 }
@@ -5127,7 +5127,7 @@ header.top-menu {
 }
 /* line 635, ../sass/style.scss */
 .primary-banner p.tlt {
-  color: white;
+  color: black;
   font-size: 41px;
   font-size: 2.92857rem;
   font-weight: 700;
@@ -10853,4 +10853,205 @@ header.top-menu {
 .wrap-isotop .p-scroll.start-slide .p-target {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+
+.be_logos{
+  margin-top: 20px;
+}
+.be_logos img{
+  width: 30px;
+  height: 30px;
+}
+img.be_puntos{
+  height: 10px;
+}
+
+
+img.who_we_are{
+  width: 400px;
+  height: 250px;
+}
+
+@media (max-width: 480px) {
+  img.who_we_are{
+    width: 300px;
+    height: 200px;
+  }
+}
+@media (min-width: 992px) {
+  img.who_we_are{
+    width: 500px;
+    height: 350px;
+  }
+}
+
+img.be_creative{
+  height: 150px;
+}
+
+@media (max-width: 767px) {
+  img.be_creative{
+    height: 80px;
+  }
+}
+
+
+
+/* Primary-banner-center-box
+------------------------------------------------------------------*/
+/* line 614, ../sass/style.scss */
+.clients-banner {
+  width: 100%;
+}
+/* line 616, ../sass/style.scss */
+.clients-banner h1 {
+  color: black;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  /* line 616, ../sass/style.scss */
+  .clients-banner h1 {
+    font-size: 36px !important;
+    margin-bottom: 0px;
+  }
+}
+/* line 624, ../sass/style.scss */
+.clients-banner h1 span {
+  font-size: 120px;
+  font-size: 8.57143rem;
+  letter-spacing: -1px;
+}
+@media (max-width: 991px) {
+  /* line 624, ../sass/style.scss */
+  .clients-banner h1 span {
+    font-size: 90px;
+    font-size: 6.42857rem;
+  }
+}
+@media (max-width: 767px) {
+  /* line 624, ../sass/style.scss */
+  .clients-banner h1 span {
+    font-size: 36px;
+    font-size: 2.57143rem;
+  }
+}
+/* line 635, ../sass/style.scss */
+.clients-banner p.tlt {
+  color: black;
+  font-size: 41px;
+  font-size: 2.92857rem;
+  font-weight: 700;
+}
+@media (max-width: 991px) {
+  /* line 635, ../sass/style.scss */
+  .clients-banner p.tlt {
+    font-size: 31px;
+    font-size: 2.21429rem;
+  }
+}
+@media (max-width: 767px) {
+  /* line 635, ../sass/style.scss */
+  .clients-banner p.tlt {
+    font-size: 16px;
+    font-size: 1.14286rem;
+  }
+}
+
+/* line 649, ../sass/style.scss */
+.clients-banner-center-box {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+/* line 653, ../sass/style.scss */
+.clients-banner-center-box > .container-fluid {
+  display: table-row;
+}
+/* line 655, ../sass/style.scss */
+.clients-banner-center-box > .container-fluid > .row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media (min-width: 992px) {
+  /* line 30, ../sass/variables-theme-11.scss */
+  .clients-banner-center-box > .container-fluid > .row {
+    display: table;
+    width: 100%;
+    margin: 0;
+  }
+  /* line 34, ../sass/variables-theme-11.scss */
+  .clients-banner-center-box > .container-fluid > .row > div {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+}
+/* line 41, ../sass/variables-theme-11.scss */
+.clients-banner-center-box > .container-fluid > .row > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 45, ../sass/variables-theme-11.scss */
+.clients-banner h1 {
+  padding-left: 30px;
+  line-height: 0.87;
+}
+/* line 48, ../sass/variables-theme-11.scss */
+.clients-banner h1 span {
+  color: #444a60;
+}
+
+@media (min-width: 992px) and (max-width: 1140px) {
+  /* line 54, ../sass/variables-theme-11.scss */
+  .clients-banner h1 span {
+    font-size: 75px;
+    font-size: 5.35714rem;
+  }
+}
+@media (max-width: 991px) {
+  /* line 59, ../sass/variables-theme-11.scss */
+  .clients-banner h1 span {
+    font-size: 55px;
+    font-size: 3.92857rem;
+  }
+}
+/* line 63, ../sass/variables-theme-11.scss */
+.clients-banner p.tlt {
+  margin: 0 0 -50px !important;
+  color: #444a60;
+}
+
+/* line 67, ../sass/variables-theme-11.scss */
+.clients-banner .wrap-isotop .element-item {
+  width: 25% !important;
+}
+@media (max-width: 767px) {
+  /* line 67, ../sass/variables-theme-11.scss */
+  .clients-banner .wrap-isotop .element-item {
+    width: 50% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 75, ../sass/variables-theme-11.scss */
+  .firefox .clients-banner .wrap-isotop .element-item {
+    width: 25%;
+  }
+}
+@media (min-width: 992px) and (max-width: 767px) {
+  /* line 75, ../sass/variables-theme-11.scss */
+  .firefox .clients-banner .wrap-isotop .element-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 991px) {
+  /* line 84, ../sass/variables-theme-11.scss */
+  .title-box {
+    padding-top: 120px;
+    padding-bottom: 140px;
+  }
 }

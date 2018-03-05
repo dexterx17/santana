@@ -33,50 +33,50 @@
 
 @media (min-width: 992px) {
   /* line 30, ../sass/variables-theme-11.scss */
-  .primary-banner-center-box > .container-fluid > .row {
+  .clients-banner-center-box > .container-fluid > .row {
     display: table;
     width: 100%;
     margin: 0;
   }
   /* line 34, ../sass/variables-theme-11.scss */
-  .primary-banner-center-box > .container-fluid > .row > div {
+  .clients-banner-center-box > .container-fluid > .row > div {
     display: table-cell;
     vertical-align: middle;
     float: none;
   }
 }
 /* line 41, ../sass/variables-theme-11.scss */
-.primary-banner-center-box > .container-fluid > .row > div {
+.clients-banner-center-box > .container-fluid > .row > div {
   padding-left: 0;
   padding-right: 0;
 }
 
 /* line 45, ../sass/variables-theme-11.scss */
-.primary-banner h1 {
+.clients-banner h1 {
   padding-left: 30px;
   line-height: 0.87;
 }
 /* line 48, ../sass/variables-theme-11.scss */
-.primary-banner h1 span {
+.clients-banner h1 span {
   color: #444a60;
 }
 
 @media (min-width: 992px) and (max-width: 1140px) {
   /* line 54, ../sass/variables-theme-11.scss */
-  .primary-banner h1 span {
+  .clients-banner h1 span {
     font-size: 75px;
     font-size: 5.35714rem;
   }
 }
 @media (max-width: 991px) {
   /* line 59, ../sass/variables-theme-11.scss */
-  .primary-banner h1 span {
+  .clients-banner h1 span {
     font-size: 55px;
     font-size: 3.92857rem;
   }
 }
 /* line 63, ../sass/variables-theme-11.scss */
-.primary-banner p.tlt {
+.clients-banner p.tlt {
   margin: 0 0 -50px !important;
   color: #444a60;
 }

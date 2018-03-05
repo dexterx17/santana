@@ -1,7 +1,7 @@
 <!--Primary banner-->
-<section class="section primary-banner portfolio demo-11" id="clients">
+<section class="section clients-banner portfolio demo-11" id="clients">
     <div class="background">
-        <div class="layer" style="background: #fff">
+        <div class="layer" style="background: #923971">
         </div>
     </div>
     <!--portfolio slider-->
@@ -10,7 +10,7 @@
     <div class="sliders close-box">
         <div class="sliders-preloader">
             <div class="background">
-                <div class="layer" style="background-color: #fff;">
+                <div class="layer" style="background-color: #923971;">
                 </div>
                 <div class="layer">
                     <svg class="circular" height="50" width="50">
@@ -48,23 +48,11 @@
         </div>
     </div>
     <!--portfolio slider-->
-    <div class="primary-banner-center-box">
+    <div class="clients-banner-center-box">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4 text-left title-box">
-                    <div class="background">
-                        <div class="layer" style="background-color:#000;">
-                        </div>
-                    </div>
-                    <h1 class="tlt">
-                        KATY
-                    </h1>
-                    <h1 class="tlt">
-                        WILD
-                    </h1>
-                    <p class="tlt" data-in-effect="bounceInDown">
-                        web designer
-                    </p>
+                <div class="col-xs-12 col-sm-12 col-md-4 text-center title-box">
+                    <img src="{{ asset('img/our_clients.png') }}" alt="Clientes de SANTANA estudio" width="300" height="200" >
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8 text-center">
                     <div class="wrap-isotop">
