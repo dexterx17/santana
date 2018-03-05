@@ -71,7 +71,7 @@
                     Producimos todo tipo de contenidos audiovisuales, tenemos todos los “juguetes” y el personal para hacer realidad la idea que tienes rondando en tu cabeza.
                 </p>
             </div>
-        </div>-->
+        </div>
         <div class="row small-icon no-margin">
             <div class="background">
                 <div class="layer" style="background-color: #fff;">
@@ -142,7 +142,7 @@
                     </ul>
                 </p>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <!-- /services

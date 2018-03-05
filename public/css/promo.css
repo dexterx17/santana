@@ -22,6 +22,8 @@ main {
   position: relative;
   z-index: 3;
   margin-top: 40px;
+  color: #fff;
+  padding-top: 25px;
 }
 
 /* Header 
@@ -588,4 +590,15 @@ footer {
     min-height: 335px;
     overflow: hidden;
   }
+}
+
+footer .promo-page .row{
+  padding-top: 20px;
+}
+
+footer .promo-page .row a{
+  color: #fff;
+}
+footer .promo-page .row a:hover{
+  color: #ff0;
 }

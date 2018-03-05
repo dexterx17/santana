@@ -65,6 +65,7 @@
     
 
 	<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true"></script>
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
 	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
 	<script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>

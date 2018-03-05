@@ -1,6 +1,6 @@
 <section class="section primary-banner" id="primary-banner">
     <div class="background">
-         <div class="layer" style="background-color: #de9c4f;"></div> 
+         <div class="layer" style="background-color: #cc9933;"></div> 
         <!--<div class="layer" style="background-image: url(images/primary.jpg);">
         </div>-->
     </div>

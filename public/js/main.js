@@ -1712,18 +1712,20 @@ function dataAttrSkills(elem, dataName, setDefault) {
 -----------------------------------------------------------------------*/
 
 function initializeMap() {
-  var myCenter=new google.maps.LatLng(40.74, -74.5);
+  //var myCenter=new google.maps.LatLng(-1.243759, -78.629514);
+  //var myCenter=new google.maps.LatLng(-1.243924, -78.629514);
+  var myCenter=new google.maps.LatLng(-1.243843749746, -78.62941397974078);
   var image = 'images/marker.png';
   var marker=new google.maps.Marker({
       position:myCenter,
-      title: 'Manhattan',
+      title: 'SANTANA Estudio',
       icon: image,
   });
 
   var mapProp = {
       center:myCenter,
-      zoom: 10,
-      draggable: false,
+      zoom: 18,
+      draggable: true,
       scrollwheel: false,
       disableDefaultUI: true,
       mapTypeId:google.maps.MapTypeId.ROADMAP

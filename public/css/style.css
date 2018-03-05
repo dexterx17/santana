@@ -10882,6 +10882,8 @@ img.who_we_are{
   img.who_we_are{
     width: 500px;
     height: 350px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }
 
