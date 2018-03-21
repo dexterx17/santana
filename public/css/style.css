@@ -2665,7 +2665,7 @@ h6 {
 
 /* line 99, ../sass/_typography.scss */
 a {
-  color: #cd3333;
+  color: #000;
 }
 /* line 101, ../sass/_typography.scss */
 a:hover, a:active, a:focus {
@@ -3617,7 +3617,7 @@ button:active:hover {
   .header.top-menu:not(.minimized-menu) .primary .navbar .navbar-collapse .nav > li > a, .header.top-menu:not(.transform-menu) .primary .navbar .navbar-collapse .nav > li > a {
     padding-left: 0px;
     padding-right: 0px;
-    color: #cd3333;
+    color: #000;
     text-transform: uppercase;
     font-size: 12px;
     font-size: 0.85714rem;

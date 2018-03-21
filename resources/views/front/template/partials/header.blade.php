@@ -74,19 +74,19 @@
             <div class="header-soc-icon pull-right">
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/ItemBridge" target="_blank">
+                        <a href="https://www.facebook.com/Santanagrafico/" target="_blank">
                             <i class="fa fa-facebook">
                             </i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/Itembridge" target="_blank">
-                            <i class="fa fa-twitter">
+                        <a href="https://www.behance.net/arte2599" target="_blank">
+                            <i class="fa fa-behance">
                             </i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://instagram.com/itembridge/" target="_blank">
+                        <a href="#" target="_blank">
                             <i class="fa fa-instagram">
                             </i>
                         </a>

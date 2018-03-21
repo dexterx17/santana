@@ -13,9 +13,15 @@
                         <img src="{{ asset('img/be_creative.png') }}" alt="" height="150" class="be_creative">
                     </h1>
                     <p class="be_logos">
-                        <img src="{{ asset('img/logo_face.png') }}" alt="Facebook SANTANA estudio">
-                        <img src="{{ asset('img/logo_behance.png') }}" alt="behance SANTANA estudio">
-                        <img src="{{ asset('img/logo_instagram.png') }}" alt="Instagram SANTANA estudio">
+                        <a href="https://www.facebook.com/Santanagrafico/" target="_blank" title="Facebook SANTANA estudio">
+                            <img src="{{ asset('img/logo_face.png') }}" alt="Facebook SANTANA estudio">
+                        </a>
+                        <a href="https://www.behance.net/arte2599" target="_blank" title="behance SANTANA estudio">
+                            <img src="{{ asset('img/logo_behance.png') }}" alt="behance SANTANA estudio">
+                        </a>
+                        <a href="https://www.facebook.com/Santanagrafico/" target="_blank" title="Instagram SANTANA estudio">
+                            <img src="{{ asset('img/logo_instagram.png') }}" alt="Instagram SANTANA estudio">
+                        </a>
                     </p>
                     <p>
                         <img src="{{ asset('img/puntos.png') }}" alt="Puntos SANTANA estudio" class="be_puntos">
