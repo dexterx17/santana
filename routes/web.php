@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('front.home');
 });
+
+
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+
+	Route::get('/','Admin@dashboard')->name('admin');
+
+	Route::resource('usuarios','Usuarios');
+	Route::resource('clientes','Clientes');
+	Route::post('clientes/{id}','Clientes@update')->name('clientes.update');
+	Route::resource('trabajos','Trabajos');
+
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
