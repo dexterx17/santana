@@ -16,8 +16,10 @@ class CreateTrabajosTable extends Migration
         Schema::create('trabajos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->string('slug')->nullable();
             $table->text('resumen');
             $table->date('fecha_inicio')->nullable();
+            $table->integer('plazo')->default(1);
             $table->date('fecha_fin')->nullable();
             $table->string('responsable');
             $table->enum('estado',['propuesta','ejecucion','entregado','cancelado']);

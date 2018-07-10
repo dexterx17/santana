@@ -38,6 +38,10 @@
                         <div class="header">
                             <h2>
                                 Listado de trabajos
+                                <a href="{{ route('trabajos.create') }}" class="btn btn-success waves-effect">
+                                    <i class="material-icons">add</i>
+                                    <span>Crear</span>
+                                </a>
                             </h2>
                         </div>
                         <div class="body">
@@ -75,9 +79,14 @@
                                             <td>{{ $trabajo->estado }}</td>
                                             <td>{{ $trabajo->cliente->nombre }}</td>
                                             <td>
-                                                <a href="{{ route('trabajos.show',$trabajo->id) }}" class="btn btn-primary waves-effect" title="Ver perfil">
-                                                    <i class="material-icons">remove_red_eye
-</i>
+                                                <a href="{{ route('trabajos.show',$trabajo->id) }}" class="btn btn-success waves-effect" title="Ver perfil">
+                                                    <i class="material-icons">remove_red_eye</i>
+                                                </a>
+                                                <a href="{{ route('trabajos.edit',$trabajo->id) }}" class="btn btn-primary waves-effect" title="Editar">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                                <a href="{{ route('trabajos.destroy',$trabajo->id) }}" class="btn btn-danger waves-effect btn-delete-item" title="Eliminar">
+                                                    <i class="material-icons">delete</i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Trabajo;
+use App\Cliente;
+
+use Notify;
 
 class Trabajos extends Controller
 {
@@ -16,13 +19,15 @@ class Trabajos extends Controller
     var $datos;
 
     /**
-     * Constructor del controlador Clientes
+     * Constructor del controlador Trabajos
      * aqui colocamos lo que vayamos a utilizar en todas las vistas que utiliza este controlador
      */
     public function __construct()
     {
         //setea la variable $active_page para agregar la clase active en el menu principal
-        $this->datos['active_page']='trabajos';
+        $this->datos['active_page'] = 'trabajos';
+        $this->datos['dias'] = $this->_getDias();
+        $this->datos['estados'] = ['propuesta'=>'Propuesta','ejecucion'=>'Ejecución','entregado'=>'Entregado','cancelado'=>'Cancelado'];
     }
 
     /**
@@ -44,7 +49,8 @@ class Trabajos extends Controller
      */
     public function create()
     {
-        //
+        $this->datos['select_clientes']=Cliente::orderBy('nombre','ASC')->get()->pluck('nombre','id');
+        return view('back.trabajos.create', $this->datos);
     }
 
     /**
@@ -55,7 +61,13 @@ class Trabajos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $trabajo = new Trabajo($request->all());
+        $trabajo->slug = str_slug($trabajo->nombre);
+
+        $trabajo->save();
+
+        Notify::success("$trabajo->nombre cread@ correctamente", $title = "Operación exitosa" , $options = []);
+        return redirect()->route('trabajos.index');
     }
 
     /**
@@ -77,7 +89,10 @@ class Trabajos extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->datos['trabajo'] = Trabajo::find($id);
+        $this->datos['select_clientes']=Cliente::orderBy('nombre','ASC')->get()->pluck('nombre','id');
+        
+        return view('back.trabajos.edit',$this->datos);
     }
 
     /**
@@ -89,7 +104,13 @@ class Trabajos extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $trabajo = Trabajo::find($id);
+        $trabajo->fill($request->all());
+        $trabajo->slug = str_slug($trabajo->nombre);
+
+        $trabajo->save();
+        Notify::success("$trabajo->nombre actualizad@ correctamente", $title = "Operación exitosa" , $options = []);
+        return redirect()->route('trabajos.index');
     }
 
     /**
@@ -98,8 +119,29 @@ class Trabajos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        $trabajo = Trabajo::find($id);
+        
+        $trabajo->delete();
+        if($request->ajax())
+        {
+            return response()->json(['success'=>TRUE,'id'=>$id]);
+        }else{
+            return redirect()->route('trabajos.index');
+        }
+    }
+
+    private function _getDias(){
+        $dias = [];
+        for($i=10;$i<=120;$i+=10){
+            if($i==1){
+                $dias[$i]= $i." día";
+            }else{
+                $dias[$i]= $i." dias";
+            }
+        }
+
+        return $dias;
     }
 }

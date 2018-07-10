@@ -1,6 +1,6 @@
 @extends('back.template.base')
 
-@section('title', 'Editar cliente')
+@section('title', 'Editar trabajo')
 @section('page_class','theme-red')
 
 @section('css')
@@ -13,6 +13,8 @@
             height: 200px;
         }
     </style>
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="{{ asset('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -34,8 +36,8 @@
         <div class="block-header">
 	        <ol class="breadcrumb breadcrumb-col-teal">
                 <li><a href="{{ route('admin') }}"><i class="material-icons">home</i> Inicio</a></li>
-	            <li><a href="{{ route('clientes.index') }}"><i class="material-icons">map</i> Clientes </a></li>
-	            <li class="active"><i class="material-icons">edit</i> Editar cliente</li>
+	            <li><a href="{{ route('trabajos.index') }}"><i class="material-icons">class</i> Trabajos </a></li>
+	            <li class="active"><i class="material-icons">edit</i> Editar trabajo</li>
 	        </ol>
         </div>
 
@@ -45,17 +47,29 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Editar cliente
+                            Editar trabajo
                             <small>Información</small>
                         </h2>
                     </div>
                     <div class="body">
-                        <form method="POST" action="{{ route('clientes.update', $cliente->id) }}" id="create-form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('trabajos.update', $trabajo->id) }}" id="create-form" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group form-float">
+                                <div class="form-line {{ $errors->has('cliente_id') ? ' error' : '' }}">
+                                    {!! Form::select('cliente_id',$select_clientes,$trabajo->cliente_id,['aria-describedby'=>'cliente_idHelp','class'=>'form-control','id'=>'cliente_id']) !!}
+                                    <label class="form-label">Cliente</label>
+                                    @if ($errors->has('cliente_id'))
+                                        <label class="error">
+                                            <strong>{{ $errors->first('cliente_id') }}</strong>
+                                        </label>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('nombre') ? ' error' : '' }}">
-                                    <input type="text" id="nombre" name="nombre" value="{{ old('nombre') ? old('nombre') : $cliente->nombre }}" class="form-control" required="">
-                                    <label class="form-label">Nombre del cliente</label>
+                                    <input type="text" id="nombre" name="nombre" value="{{ old('nombre') ? old('nombre') : $trabajo->nombre }}" class="form-control" required="">
+                                    <label class="form-label">Nombre del trabajo</label>
 
                                     @if ($errors->has('nombre'))
                                         <label class="error">
@@ -66,60 +80,73 @@
                             </div>
 
                             <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('descripcion') ? ' error' : '' }}">
-                                    <textarea id="descripcion" name="descripcion" class="form-control">{{ old('descripcion') ? old('descripcion') : $cliente->descripcion }}</textarea>
-                                    <label class="form-label">Descripción o contenido</label>
-                                    @if ($errors->has('descripcion'))
+                                <div class="form-line {{ $errors->has('resumen') ? ' error' : '' }}">
+                                    <textarea id="resumen" name="resumen" class="form-control">{{ old('resumen') ? old('resumen') : $trabajo->resumen }}</textarea>
+                                    <label class="form-label">Resumen o descripción</label>
+                                    @if ($errors->has('resumen'))
                                         <label class="error">
-                                            <strong>{{ $errors->first('descripcion') }}</strong>
+                                            <strong>{{ $errors->first('resumen') }}</strong>
                                         </label>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('logo') ? ' error' : '' }}">
-                                    <input type="file" name="logo" class="form-control">
-                                    <label class="form-label">Logo/Icono</label>
-                                    @if ($errors->has('logo'))
+                                <div class="form-line {{ $errors->has('presupuesto') ? ' error' : '' }}">
+                                    <input type="number" name="presupuesto" class="form-control"  value="{{ old('presupuesto') ? old('presupuesto') : $trabajo->presupuesto }}" >
+                                    <label class="form-label">Presupuesto</label>
+                                    @if ($errors->has('presupuesto'))
                                         <label class="error">
-                                            <strong>{{ $errors->first('logo') }}</strong>
+                                            <strong>{{ $errors->first('presupuesto') }}</strong>
                                         </label>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('telefono') ? ' error' : '' }}">
-                                    <input type="telefono" name="telefono" class="form-control"  value="{{ old('telefono') ? old('telefono') : $cliente->telefono }}" >
-                                    <label class="form-label">Teléfono(s)</label>
-                                    @if ($errors->has('telefono'))
+                                <div class="form-line {{ $errors->has('estado') ? ' error' : '' }}">
+                                    {!! Form::select('estado',$estados,$trabajo->estado,['aria-describedby'=>'estadoHelp','class'=>'form-control','id'=>'estado']) !!}
+                                    <label class="form-label">Estado</label>
+                                    @if ($errors->has('estado'))
                                         <label class="error">
-                                            <strong>{{ $errors->first('telefono') }}</strong>
+                                            <strong>{{ $errors->first('estado') }}</strong>
+                                        </label>
+                                    @endif
+                                </div>
+                            </div>
+
+
+                            <div class="form-group form-float">
+                                <div class="form-line {{ $errors->has('fecha_inicio') ? ' error' : '' }}">
+                                    <input type="text" id="fecha_inicio" name="fecha_inicio" value="{{ old('fecha_inicio') ? old('fecha_inicio') : $trabajo->fecha_inicio }}" class="form-control">
+                                    <label class="form-label">Fecha</label>
+                                    @if ($errors->has('fecha_inicio'))
+                                        <label class="error">
+                                            <strong>{{ $errors->first('fecha_inicio') }}</strong>
                                         </label>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('contacto') ? ' error' : '' }}">
-                                    <input type="contacto" name="contacto" class="form-control"  value="{{ old('contacto') ? old('contacto') : $cliente->contacto }}" >
-                                    <label class="form-label">Persona de contacto</label>
-                                    @if ($errors->has('contacto'))
+                                <div class="form-line {{ $errors->has('plazo') ? ' error' : '' }}">
+                                    {!! Form::select('plazo',$dias,$trabajo->plazo,['class'=>'form-control','id'=>'plazo']) !!}
+                                    <label class="form-label">Duracion</label>
+                                    @if ($errors->has('plazo'))
                                         <label class="error">
-                                            <strong>{{ $errors->first('contacto') }}</strong>
+                                            <strong>{{ $errors->first('plazo') }}</strong>
                                         </label>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('email') ? ' error' : '' }}">
-                                    <input type="email" name="email" class="form-control"  value="{{ old('email') ? old('email') : $cliente->email }}" >
-                                    <label class="form-label">Email</label>
-                                    @if ($errors->has('email'))
+                                <div class="form-line {{ $errors->has('responsable') ? ' error' : '' }}">
+                                    <input type="text" name="responsable" class="form-control"  value="{{ old('responsable') ? old('responsable') : $trabajo->responsable }}" >
+                                    <label class="form-label">Persona de responsable</label>
+                                    @if ($errors->has('responsable'))
                                         <label class="error">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('responsable') }}</strong>
                                         </label>
                                     @endif
                                 </div>
@@ -127,59 +154,11 @@
 
                             <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('web') ? ' error' : '' }}">
-                                    <input type="url" name="web" class="form-control"  value="{{ old('web') ? old('web') : $cliente->web }}" >
+                                    <input type="url" name="web" class="form-control"  value="{{ old('web') ? old('web') : $trabajo->web }}" >
                                     <label class="form-label">Página web</label>
                                     @if ($errors->has('web'))
                                         <label class="error">
                                             <strong>{{ $errors->first('web') }}</strong>
-                                        </label>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('facebook_page') ? ' error' : '' }}">
-                                    <input type="url" name="facebook_page" class="form-control"  value="{{ old('facebook_page') ? old('facebook_page') : $cliente->facebook_page }}" >
-                                    <label class="form-label">Página de facebook</label>
-                                    @if ($errors->has('facebook_page'))
-                                        <label class="error">
-                                            <strong>{{ $errors->first('facebook_page') }}</strong>
-                                        </label>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('twitter_page') ? ' error' : '' }}">
-                                    <input type="url" name="twitter_page" class="form-control"  value="{{ old('twitter_page') ? old('twitter_page') : $cliente->twitter_page }}" >
-                                    <label class="form-label">Página de twitter</label>
-                                    @if ($errors->has('twitter_page'))
-                                        <label class="error">
-                                            <strong>{{ $errors->first('twitter_page') }}</strong>
-                                        </label>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('instagram_page') ? ' error' : '' }}">
-                                    <input type="url" name="instagram_page" class="form-control"  value="{{ old('instagram_page') ? old('instagram_page') : $cliente->instagram_page }}" >
-                                    <label class="form-label">Página de instagram</label>
-                                    @if ($errors->has('instagram_page'))
-                                        <label class="error">
-                                            <strong>{{ $errors->first('instagram_page') }}</strong>
-                                        </label>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group form-float">
-                                <div class="form-line {{ $errors->has('youtube_page') ? ' error' : '' }}">
-                                    <input type="url" name="youtube_page" class="form-control"  value="{{ old('youtube_page') ? old('youtube_page') : $cliente->youtube_page }}" >
-                                    <label class="form-label">Página de youtube</label>
-                                    @if ($errors->has('youtube_page'))
-                                        <label class="error">
-                                            <strong>{{ $errors->first('youtube_page') }}</strong>
                                         </label>
                                     @endif
                                 </div>
@@ -193,7 +172,7 @@
 
                             <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('lat') ? ' error' : '' }}">
-                                    <input type="text" name="lat" class="form-control"  value="{{ old('lat') ? old('lat') : $cliente->lat }}" id="lat">
+                                    <input type="text" name="lat" class="form-control"  value="{{ old('lat') ? old('lat') : $trabajo->lat }}" id="lat">
                                     <label class="form-label">Latitud</label>
                                     @if ($errors->has('lat'))
                                         <label class="error">
@@ -205,7 +184,7 @@
 
                             <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('lng') ? ' error' : '' }}">
-                                    <input type="text" name="lng" class="form-control"  value="{{ old('lng') ? old('lng') : $cliente->lng }}" id="lng">
+                                    <input type="text" name="lng" class="form-control"  value="{{ old('lng') ? old('lng') : $trabajo->lng }}" id="lng">
                                     <label class="form-label">Longitud</label>
                                     @if ($errors->has('lng'))
                                         <label class="error">
@@ -217,7 +196,7 @@
 
                             <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('orden') ? ' error' : '' }}">
-                                    <input type="number" id="orden" name="orden" value="{{ old('orden') ? old('orden') : $cliente->orden }}" class="form-control">
+                                    <input type="number" id="orden" name="orden" value="{{ old('orden') ? old('orden') : $trabajo->orden }}" class="form-control">
                                     <label class="form-label">Orden de visualizacion</label>
                                     @if ($errors->has('orden'))
                                         <label class="error">
@@ -231,7 +210,7 @@
                                 <i class="material-icons">save</i>
                                 Guardar
                             </button>
-                            <a href="{{ route('clientes.index') }}" class="btn btn-secondary m-t-15 waves-effect" title="Cancelar">
+                            <a href="{{ route('trabajos.index') }}" class="btn btn-secondary m-t-15 waves-effect" title="Cancelar">
                                 <i class="material-icons">cancel</i>
                                 Cancelar
                             </a>
@@ -249,7 +228,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Imágenes de {{ $cliente->nombre }}
+                            Imágenes de {{ $trabajo->nombre }}
                         </h2>
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12" id="container-form-imagenes">
@@ -257,13 +236,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            @foreach($cliente->imagenes()->get() as $imagen )
+                            @foreach($trabajo->imagenes()->get() as $imagen )
                                 @include('back.template.partials.image_block', ['imagen'=>$imagen])
                             @endforeach
                         </div>
                     </div>
                     <div class="body">
-                        <form action="{{ route('admin.imagenes.store',$cliente->id) }}" class="dropzone">
+                        <form action="{{ route('admin.imagenes.store',$trabajo->id) }}" class="dropzone">
                         </form>
                         <br/>
                     </div>
@@ -277,20 +256,14 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('plugins/chosen/chosen.jquery.js') }}" type="text/javascript"></script>
+<!-- Moment Plugin Js -->
+<script src="{{ asset('plugins/momentjs/moment.js') }}"></script>
+
+<!-- Bootstrap Material Datetime Picker Plugin Js -->
+<script src="{{ asset('plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
+
 <script src="{{ asset('plugins/dropzone/min/dropzone.min.js') }}" type="text/javascript"></script>
-<script type="text/javascript">
-    $('#actividades').chosen({
-        placeholder_text_single:"Selecciona una o varias actividades",
-        placeholder_text:"Selecciona una o varias actividades",
-        width:'100%'
-    });
-    $('#categorias').chosen({
-        placeholder_text_single:"Selecciona una o varias categorias",
-        placeholder_text:"Selecciona una o varias categorias",
-        width:'100%'
-    });
-</script>
+
 <script  type="text/javascript" charset="utf-8">
 
 
@@ -329,6 +302,14 @@
         });
     });
 
+    $(function () {
+        $('#fecha_inicio').bootstrapMaterialDatePicker({
+            format: 'YYYY-MM-DD',
+            clearButton: true,
+            weekStart: 1,
+            time: false
+        });
+    });
     $(document).ready(function(){
         $('.dropzone').dropzone({
             'maxFilesize':1,
@@ -337,7 +318,7 @@
             'acceptedFiles':'image/*',
             sending:function(file, xhr, formData){
                 formData.append("_token", '{{ Session::token() }}');
-                formData.append("referencia", 'clientes');
+                formData.append("referencia", 'trabajos');
             }
         });
     });
@@ -394,8 +375,8 @@
             }
         }
 
-        if(('{{ $cliente->lat }}' != '')  && ('{{ $cliente->lng }}' != '')){
-            origin = {lat: parseFloat('{{ $cliente->lat }}'), lng: parseFloat('{{ $cliente->lng }}')};
+        if(('{{ $trabajo->lat }}' != '')  && ('{{ $trabajo->lng }}' != '')){
+            origin = {lat: parseFloat('{{ $trabajo->lat }}'), lng: parseFloat('{{ $trabajo->lng }}')};
             
             map = new google.maps.Map(document.getElementById('map'), {
                 center: origin,

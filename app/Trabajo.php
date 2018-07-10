@@ -9,7 +9,7 @@ class Trabajo extends Model
     protected $table = "trabajos";
 
     protected $fillable = [
-    	'nombre', 'resumen', 'fecha_inicio', 'fecha_fin',
+    	'nombre', 'slug', 'resumen', 'fecha_inicio', 'fecha_fin', 'plazo',
     	'responsable', 'estado', 'presupuesto', 'url', 'cliente_id'
     ];
 

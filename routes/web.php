@@ -21,9 +21,30 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::get('/','Admin@dashboard')->name('admin');
 
 	Route::resource('usuarios','Usuarios');
+	
 	Route::resource('clientes','Clientes');
 	Route::post('clientes/{id}','Clientes@update')->name('clientes.update');
+	
 	Route::resource('trabajos','Trabajos');
+	Route::post('trabajos/{id}','Trabajos@update')->name('trabajos.update');
+
+	/* rutas IMAGENES */
+	Route::get('imagenes/{id}/edit',[
+		'uses' => 'Imagenes@edit',
+		'as' => 'admin.imagenes.edit'
+	]);
+	Route::post('imagens/{id}',[
+		'uses' => 'Imagenes@update',
+		'as' => 'admin.imagenes.update'
+	]);
+	Route::post('imagenes/{ref_id}',[
+		'uses' =>'Imagenes@add',
+		'as'=>'admin.imagenes.store'
+	]);
+	Route::delete('imagenes/{id}/destroy',[
+		'uses'=>'Imagenes@destroy',
+		'as' =>'admin.imagenes.destroy'
+	]);
 
 });
 Auth::routes();

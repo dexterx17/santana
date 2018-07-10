@@ -136,8 +136,16 @@ class Clientes extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        $cliente = Cliente::find($id);
+        
+        $cliente->delete();
+        if($request->ajax())
+        {
+            return response()->json(['success'=>TRUE,'id'=>$id]);
+        }else{
+            return redirect()->route('clientes.index');
+        }
     }
 }
