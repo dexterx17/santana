@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-});
+Route::get('/', 'Front@index')->name('landing');
 
 Route::get('template',function(){
 	return view('base');
