@@ -38,6 +38,34 @@ class ClientesSeeder extends Seeder
         $cliente->contacto = "Sid Calle";
         $cliente->save();
         //*******************************************************
+        
+        //******************** HGPT *****************
+        $cliente = new Cliente();
+        $cliente->nombre = "Honorable Gobierno Provincial de Tungurahua";
+        //$cliente->ruc = "";
+        $cliente->email = "gobierno.provincial@tungurahua.gob.ec";
+        $cliente->telefono = "033730220";
+        $cliente->direccion = "Calles Simón Bolivar y Mariano Castillo";
+        $cliente->ciudad = "Ambato";
+        $cliente->web = "https://tungurahua.gob.ec";
+        $cliente->contacto = "";
+        $cliente->save();
+        //*******************************************************
+    
+        /******************** HGPT *****************
+        $cliente = new Cliente();
+        $cliente->nombre = "Honorable Gobierno Provincial de Tungurahua";
+        //$cliente->ruc = "";
+        $cliente->email = "";
+        $cliente->telefono = "072700116";
+        $cliente->direccion = "Castillo y Bolívar (Esquina).";
+        $cliente->ciudad = "Ambato";
+        $cliente->web = "https://tungurahua.gob.ec";
+        $cliente->contacto = "";
+        $cliente->save();
+        //*******************************************************/
+        
+
 
     }
 }

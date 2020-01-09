@@ -32,6 +32,7 @@ class CreateClientesTable extends Migration
             $table->integer('orden')->default(0);
             $table->double('lat')->nullable();
             $table->double('lng')->nullable();
+            
             $table->timestamps();
         });
     }

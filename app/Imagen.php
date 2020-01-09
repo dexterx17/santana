@@ -21,10 +21,14 @@ class Imagen extends Model
     public function scopeReferencia($query){
     	
     	switch ($this->tabla_referencia) {
-    		case 'clientes':
-    			$cliente = Cliente::find($this->id_referencia);
+    		case 'users':
+    			$user = User::find($this->id_referencia);
+                return $user;
+    			break;           
+            case 'clientes':
+                $cliente = Cliente::find($this->id_referencia);
                 return $cliente;
-    			break;
+                break;
     		case 'trabajos':
     			$trabajo = Trabajo::find($this->id_referencia);
                 return $trabajo;

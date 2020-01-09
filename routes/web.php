@@ -15,12 +15,17 @@ Route::get('/', function () {
     return view('front.home');
 });
 
+Route::get('template',function(){
+	return view('base');
+});
+
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 	Route::get('/','Admin@dashboard')->name('admin');
 
 	Route::resource('usuarios','Usuarios');
+	Route::post('usuarios/{id}','Usuarios@update')->name('usuarios.update');
 	
 	Route::resource('clientes','Clientes');
 	Route::post('clientes/{id}','Clientes@update')->name('clientes.update');

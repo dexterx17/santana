@@ -22,6 +22,14 @@ class Cliente extends Model
     }
 
     /**
+     * Una cliente tiene varias proformas
+     * @return [App\Trabajo]   Array de objetos tipo Trabajo
+     */
+    public function proformas(){
+        return $this->hasMany('App\Proforma');
+    }
+
+    /**
      * Devuelve las imagenes de un cliente
      * @param  [type] $query [description]
      * @return App/Imagen       Coleccion de Objetos tipo Imagen

@@ -85,7 +85,9 @@ class Clientes extends Controller
      */
     public function show($id)
     {
-        //
+        $this->datos['cliente'] = Cliente::find($id);
+        
+        return view('back.clientes.show',$this->datos);
     }
 
     /**

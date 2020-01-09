@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone'
     ];
 
     /**
@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Devuelve las imagenes de un cliente
+     * @param  [type] $query [description]
+     * @return App/Imagen       Coleccion de Objetos tipo Imagen
+     */
+    public function scopeImagenes($query){
+        return Imagen::where('tabla_referencia',$this->table)
+                ->where('id_referencia',$this->id);
+    }
 }

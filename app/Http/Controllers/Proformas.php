@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\User;
+use App\Proforma;
 
 use Notify;
 
-class Usuarios extends Controller
+class Proformas extends Controller
 {
-    /**
+        /**
      * $datos Guarda las variables que se van a pasar a la vista en un solo array
      * @var array
      */
@@ -23,7 +23,7 @@ class Usuarios extends Controller
     public function __construct()
     {
         //setea la variable $active_page para agregar la clase active en el menu principal
-        $this->datos['active_page']='usuarios';
+        $this->datos['active_page']='proformas';
     }
 
     /**
@@ -33,11 +33,11 @@ class Usuarios extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $proformas = Proforma::all();
 
-        $this->datos['usuarios'] = $usuarios;
+        $this->datos['proformas'] = $proformas;
 
-        return view('back.usuarios.index', $this->datos);
+        return view('back.proformas.index', $this->datos);
     }
 
     /**
@@ -47,7 +47,7 @@ class Usuarios extends Controller
      */
     public function create()
     {
-        return view('back.usuarios.create', $this->datos);
+        return view('back.proformas.create', $this->datos);
     }
 
     /**
@@ -58,12 +58,12 @@ class Usuarios extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new User($request->all());
+        $usuario = new Proforma($request->all());
         $usuario->password = bcrypt($request->password);
         $usuario->save();
 
         Notify::success("$usuario->name cread@ correctamente", $title = "Operación exitosa" , $options = []);
-        return redirect()->route('usuarios.index');
+        return redirect()->route('proformas.index');
     }
 
     /**
@@ -85,9 +85,9 @@ class Usuarios extends Controller
      */
     public function edit($id)
     {
-        $this->datos['usuario'] = User::find($id);
+        $this->datos['usuario'] = Proforma::find($id);
         
-        return view('back.usuarios.edit',$this->datos);
+        return view('back.proformas.edit',$this->datos);
     }
 
     /**
@@ -99,7 +99,7 @@ class Usuarios extends Controller
      */
     public function update(Request $request, $id)
     {
-        $usuario = User::find($id);
+        $usuario = Proforma::find($id);
         $usuario->fill($request->all());
         if($request->has('password'))
             $usuario->password = bcrypt($request->password);
@@ -108,7 +108,7 @@ class Usuarios extends Controller
         $usuario->save();
 
         Notify::success("$usuario->name actualizad@ correctamente", $title = "Operación exitosa" , $options = []);
-        return redirect()->route('usuarios.index');
+        return redirect()->route('proformas.index');
     }
 
     /**
@@ -119,14 +119,14 @@ class Usuarios extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $usuario = User::find($id);
+        $usuario = Proforma::find($id);
         $usuario->delete();
 
         if($request->ajax())
         {
             return response()->json(['success'=>TRUE,'id'=>$id]);
         }else{
-            return redirect()->route('usuarios.index');
+            return redirect()->route('proformas.index');
         }
     }
 }

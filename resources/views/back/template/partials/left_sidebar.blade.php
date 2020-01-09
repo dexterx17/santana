@@ -50,8 +50,8 @@
             </li>
             
             <li class="header">Admin</li>
-            <li>
-                <a href="#">
+            <li  class="@if(@$active_page==='usuarios') active @endif">
+                <a href="{{ route('usuarios.index') }}">
                     <i class="material-icons col-light-blue">person</i>
                     <span>Usuarios</span>
                 </a>
