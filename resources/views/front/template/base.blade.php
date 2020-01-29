@@ -11,12 +11,17 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,300,800,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+	<link rel="stylesheet" href="{{ asset('js/fancybox/source/jquery.fancybox.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/dzsparallaxer.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/progress.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+  	<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/promo.css') }}" /> 
+	<link rel="stylesheet" href="{{ asset('css/variables-theme-2.css') }}">/> 
 	
+
 
 	<!-- IE 10-11 style fix -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ie10.css') }}" />
@@ -47,15 +52,14 @@
     </div>
     <!-- content-wrap -->
     @include('front.template.partials.header')
-    <main class="promo">
+    <main>
 
     	@include('front.sections.banner_inicial')
 
     	@include('front.sections.nosotros')
 
-    	@include('front.sections.portafolio')
-    	
-    	@include('front.sections.clients')
+    	@include('front.sections.portafolio_new')
+
     	
     	@include('front.sections.contactos')
 
@@ -67,19 +71,33 @@
 	<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true"></script>
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
-	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap-select.js') }}"></script>
+	<script src="{{ asset('js/bootstrap-tabcollapse.js') }}"></script> 
+	<script src="{{ asset('js/dzsparallaxer.js') }}"></script> 
+	<script src="{{ asset('js/easy-circle-skill.js') }}"></script>
+	<script src="{{ asset('js/getshar-0.8.0.min.js') }}"></script> 
 	<script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.appear.js') }}"></script> 
+	<script src="{{ asset('js/jquery.carouFredSel-6.2.1-packed.js') }}"></script>
+	<script src="{{ asset('js/jquery.countTo.js') }}"></script> 
+	<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> 
+	<script src="{{ asset('js/jquery.mCustomScrollbar.js') }}"></script> 
+	<script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.singlePageNav.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.textillate.js') }}"></script> 
+	<script src="{{ asset('js/jquery-asPieProgress.js') }}"></script> 
+	<script src="{{ asset('js/masonry.pkgd.js') }}"></script> 
+	<script src="{{ asset('js/masonry.pkgd.min.js') }}"></script> 
+	<script src="{{ asset('js/owl.carousel.js') }}"></script>
+	<script src="{{ asset('js/responsiveslides.js') }}"></script>
+	<script src="{{ asset('js/sliders.js') }}"></script> 
 	<script src="{{ asset('js/small-icons.js') }}"></script> 
+	<script src="{{ asset('js/jquery.textillate.js') }}"></script>
 	<script src="{{ asset('js/assets/jquery.fittext.js') }}"></script>
 	<script src="{{ asset('js/assets/jquery.lettering.js') }}"></script>
-	<script src="{{ asset('js/jquery.textillate.js') }}"></script> 
-	<script src="{{ asset('js/jquery.mCustomScrollbar.js') }}"></script> 
-	<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> 
-	<script src="{{ asset('js/jquery.appear.js') }}"></script> 
+	<script src="{{ asset('js/fancybox/source/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
-
-	<script src="{{ asset('js/jquery.singlePageNav.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
 
 	<script type="text/javascript">
 

@@ -16,6 +16,12 @@ class CreateImagensTable extends Migration
         Schema::create('imagenes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ruta');
+            $table->string('ruta_265x265')->nullable(); // section clientes
+            $table->string('ruta_360x240')->nullable(); // preview gallery admin
+            $table->string('ruta_530x530')->nullable(); // section clientes
+            $table->string('ruta_650x1070')->nullable(); // section trabajos
+            $table->string('ruta_1024x640')->nullable(); // slide gallery admin
+            $table->string('ruta_1300x2140')->nullable(); //section trabajos
             $table->string('nombre')->nullable();
             $table->string('autor')->nullable();
             $table->string('creditos')->nullable();

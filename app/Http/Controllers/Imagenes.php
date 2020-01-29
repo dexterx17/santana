@@ -44,16 +44,39 @@ class Imagenes extends Controller
         if($request->file('imagen'))
         {
             $imagen = new Imagen();
+            $microtime = microtime();
             $file = $request->file('imagen');
-            $name = $request->referencia."_".microtime().'.'.$file->getClientOriginalExtension();
+            $name = $request->referencia."_".$microtime.'.'.$file->getClientOriginalExtension();
             $name=str_replace(" ","_",$name);
             $path = public_path().'/img/uploads/';
+            
+            //guardando imagen para preview de slider en admin
+            $name_360_240 = $request->referencia."360x240".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(360, 240, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_360_240);  
+
+            //guardando una imagen redimensionada
+            $name_1024_640 = $request->referencia."1024x640".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(1024, 640, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_1024_640);
+
             $file->move($path,$name);
-            //$imagen->nombre=$file->name;
+            
             $imagen->ruta=$name;
+            $imagen->ruta_360x240=$name_360_240;
+            $imagen->ruta_1024x640=$name_1024_640;
+            
             $imagen->id_referencia = $referencia_id;
             $imagen->tabla_referencia = $request->referencia;
             $imagen->save();
+
+
+
+
             if($request->ajax())
             {
                 return response()->json(["success"=>TRUE]);

@@ -49,7 +49,8 @@
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
+                                            <th>Logo</th>
+                                            <th>Cliente</th>
                                             <th>Email</th>
                                             <th>Teléfono</th>
                                             <th>Contacto</th>
@@ -58,15 +59,18 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Nombre</th>
+                                            <th>Logo</th>
+                                            <th>Cliente</th>
                                             <th>Email</th>
                                             <th>Teléfono</th>
+                                            <th>Contacto</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @foreach($clientes as $cliente)
                                         <tr id="item{{ $cliente->id }}">
+                                            <td><img src="{{ asset('img/logos/'.$cliente->logo) }}" alt="{{ $cliente->nombre }}" width="60" height="60"></td>
                                             <td>{{ $cliente->nombre }}</td>
                                             <td>{{ $cliente->email }}</td>
                                             <td>{{ $cliente->telefono }}</td>

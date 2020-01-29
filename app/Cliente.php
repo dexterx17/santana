@@ -9,8 +9,8 @@ class Cliente extends Model
     protected $table = "clientes";
 
     protected $fillable = [
-    	'nombre', 'description', 'ruc', 'email','telefono','direccion','web','contacto','orden','lat','lng',
-        'ciudad', 'facebook_page', 'twitter_page', 'instagram_page', 'youtube_page', 'slug'
+    	'nombre', 'descripcion', 'ruc', 'email','telefono','direccion','web','contacto','orden','lat','lng',
+        'ciudad', 'facebook_page', 'twitter_page', 'instagram_page', 'youtube_page', 'slug','logo'
     ];
 
     /**

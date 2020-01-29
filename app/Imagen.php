@@ -9,7 +9,8 @@ class Imagen extends Model
     protected $table = "imagenes";
 
     protected $fillable = [
-    	'ruta','nombre','autor','creditos',
+    	'ruta', 'ruta_265x265','ruta_360x240','ruta_530x530','ruta_650x1070',
+        'ruta_1024x640','1300x2140', 'nombre','autor','creditos',
     	'tabla_referencia','id_referencia','destacada', 'tresd'
     ];
 

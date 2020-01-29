@@ -110,7 +110,7 @@ class Trabajos extends Controller
 
         $trabajo->save();
         Notify::success("$trabajo->nombre actualizad@ correctamente", $title = "Operación exitosa" , $options = []);
-        return redirect()->route('trabajos.index');
+        return redirect()->route('clientes.show',$trabajo->cliente_id);
     }
 
     /**

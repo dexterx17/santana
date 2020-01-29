@@ -8,6 +8,8 @@ use App\Cliente;
 
 use Notify;
 
+use Image;
+
 class Clientes extends Controller
 {
 
@@ -64,7 +66,15 @@ class Clientes extends Controller
         if($request->file('logo'))
         {
             $file = $request->file('logo');
-            $name = 'logo_'.time().'.'.$file->getClientOriginalExtension();
+            $microtime = microtime();
+            $name = 'logo_'.$microtime.'.'.$file->getClientOriginalExtension();
+
+            //guardando una imagen redimensionada
+            $name_thumb = "logo_265x265_".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(265, 265, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_thumb);
             
             $path = public_path().'/img/logos/';
             $file->move($path,$name);
@@ -120,9 +130,24 @@ class Clientes extends Controller
         if($request->file('logo'))
         {
             $file = $request->file('logo');
-            $name = 'logo_'.time().'.'.$file->getClientOriginalExtension();
-            
+            $microtime = microtime();
+            $name = 'logo_'.$microtime.'.'.$file->getClientOriginalExtension();
             $path = public_path().'/img/logos/';
+
+            //guardando una imagen redimensionada de 265 x 265
+            $name_thumb = "logo_265x265_".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(265, 265, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_thumb); 
+
+            //guardando una imagen redimensionada de 265 x 265
+            $name_big = "logo_530x530_".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(530, 530, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_big);
+
             $file->move($path,$name);
             $cliente->logo=$name;
         }
