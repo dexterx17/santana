@@ -50,7 +50,21 @@ class Imagenes extends Controller
             $name=str_replace(" ","_",$name);
             $path = public_path().'/img/uploads/';
             
-            //guardando imagen para preview de slider en admin
+            //guardando imagen para preview de portafolio
+            $name_265_265 = $request->referencia."265x265".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(265, 265, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_265_265); 
+
+            //guardando imagen para preview de portafolio
+            $name_530_530 = $request->referencia."530x530".$microtime.'.'.$file->getClientOriginalExtension();
+            $resize_image = Image::make($file->getRealPath());
+            $resize_image->resize(530, 530, function($constraint){
+              $constraint->aspectRatio();
+            })->save($path . '/' . $name_530_530);             
+
+             //guardando imagen para preview de slider en admin
             $name_360_240 = $request->referencia."360x240".$microtime.'.'.$file->getClientOriginalExtension();
             $resize_image = Image::make($file->getRealPath());
             $resize_image->resize(360, 240, function($constraint){
@@ -67,7 +81,8 @@ class Imagenes extends Controller
             $file->move($path,$name);
             
             $imagen->ruta=$name;
-            $imagen->ruta_360x240=$name_360_240;
+            $imagen->ruta_265x265=$name_265_265;
+            $imagen->ruta_1024x640=$name_1024_640;
             $imagen->ruta_1024x640=$name_1024_640;
             
             $imagen->id_referencia = $referencia_id;

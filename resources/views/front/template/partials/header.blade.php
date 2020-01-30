@@ -16,7 +16,7 @@
 <div id="home">
 </div>
 <!-- header -->
-<header class="top-menu promo-header">
+<header class="top-menu @if(@$promo=='si')promo-header @endif">
     <div class="header top-menu " id="header">
         <div class="header-box first pull-left">
             <div class="logo-mini pull-left">
@@ -24,6 +24,12 @@
                     <img alt="The Image" class="svg logo-img" height="40" src="{{ asset('img/logo_black.png') }}" width="120">
                     </img>
                 </a>
+            </div>
+            <div class="pull-left" id="languages">
+                <ul>
+                  <li><a href="#" class="default-hovered active">Es</a></li>
+                  <li><a href="#" class="default-hovered">En</a></li>
+                </ul>
             </div>
         </div>
         <div class="header-box menu-box pull-left">
@@ -62,6 +68,14 @@
                                     Contactos
                                 </a>
                             </li>
+                            <li class="parent">
+                              <a href="#">Opciones</a>
+                              <ul class="sub">
+                                    <li><a href="{{ route('template','base') }}">CERO</a></li>
+                                    <li><a href="{{ route('template','base1') }}">UNO</a></li>
+                                    <li><a href="{{ route('template','base2') }}">DOS</a></li>
+                              </ul>
+                            </li>
                             <li class="widget-box visible-xs">
                             </li>
                         </ul>
@@ -96,7 +110,7 @@
         </div>
         <!-- <button class="menu-close pull-right"><span class="glyphicon glyphicon-remove"></span></button> -->
         <button class="menu-close pull-right">
-            <img alt="" src="images/close.png"/>
+            <img alt="" src="{{ asset('images/close.png') }}"/>
         </button>
     </div>
 </header>

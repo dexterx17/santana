@@ -84,7 +84,7 @@ class Clientes extends Controller
         $cliente->save();
 
         Notify::success("$cliente->nombre cread@ correctamente", $title = "Operación exitosa" , $options = []);
-        return redirect()->route('clientes.index');
+        return redirect()->route('clientes.show',$cliente->id);
     }
 
     /**
@@ -154,7 +154,7 @@ class Clientes extends Controller
 
         $cliente->save();
         Notify::success("$cliente->nombre actualizad@ correctamente", $title = "Operación exitosa" , $options = []);
-        return redirect()->route('clientes.index');
+        return redirect()->route('clientes.show', $id);
     }
 
     /**

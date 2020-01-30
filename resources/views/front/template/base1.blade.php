@@ -12,17 +12,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,300,800,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
-	<link rel="stylesheet" href="{{ asset('js/fancybox/source/jquery.fancybox.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/dzsparallaxer.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/progress.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('js/fancybox/source/jquery.fancybox.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-  	<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/variables-theme-2.css') }}"/> 
-	
-	<!-- IE 10-11 style fix -->
+	<link rel="stylesheet" href="{{ asset('css/variables-theme-1.css') }}">
+
+
+		<!-- IE 10-11 style fix -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ie10.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ie11.css') }}" />
 	<!--[if IE 9]>   
@@ -48,47 +49,46 @@
 		      </div>
 	    </div>
 	</div>
-    <!-- content-wrap -->
-    @include('front.template.partials.header_vertical')
-    <main>
+	<!-- header -->
+	@include('front.template.partials.header')
+	
+	<!-- main -->
+	<main>
     <div class="background">
       <div class="layer" style="background-color: #ffffff;"></div>
     </div>
-    	@include('front.sections.banner_inicial2')
-
-    	@include('front.sections.section_video')
 
 
+	<!-- Primary Banner -->
+	@include('front.sections.banner_slider')
+	<!-- /Primary Banner -->
 
-    	@include('front.sections.team')
+		
+		<!-- About -->
+	@include('front.sections.nosotros')
+		<!-- /About -->
 
-    	<section class="section dafault-padding dividing-block sample-3">
-	    	<div class="background">
-					<div class="layer" style="background-color: #F5F5F5"></div>
-				</div>
 
-	    	<div class="row">
-	    		<div class="container">
-	    			<div class="col-xs-12 col-sm-9">
-	    				<h5>Deseas explorar todos nuestros trabajos?</h5>
-	    			</div>
-	    			<div class="col-xs-12 col-sm-3 text-center">
-		          <a href="#" target="blank_" class="btn btn-default red-style">Comenzar a explorar</a>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </section>
-    	@include('front.sections.portafolio_new')
-
-    	
-    	@include('front.sections.contactos')
-
-    </main>
-    @include('front.template.partials.footer')
-
+		<!-- Portfolio -->
+	@include('front.sections.portafolio_new')
     
+    <!-- / Portfolio -->
 
-		<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+
+
+    <!-- How about video -->
+    @include('front.sections.section_video')
+    <!-- /How about video -->
+
+
+	@include('front.sections.contactos')
+
+
+	</main><!-- / main-->
+
+	@include('front.template.partials.new_footer')  
+
+	<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true"></script>
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
 	<script src="{{ asset('js/bootstrap-select.js') }}"></script>

@@ -1,1 +1,1 @@
-@extends('front.template.base')
+@extends('front.template.base1')

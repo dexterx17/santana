@@ -1,7 +1,7 @@
 <!-- Сontact-->
 <section class="section" id="contactos">
 	<div class="background">
-	  <div class="layer" style="background-image: url(images/cont_bg.jpg);"></div>
+	  <div class="layer" style="background-image: url({{ asset('images/cont_bg.jpg') }} );"></div>
 	  <div class="layer" style="background-color: rgba(255, 255, 255, 0.83);"></div>
 	</div>
 
@@ -18,7 +18,7 @@
 				</div>
 
 				<div class="col-xs-12 t1 no-padding">
-					<img class="img-responsive" src="images/cont_img.jpg" alt="">
+					<img class="img-responsive" src="{{ asset('images/cont_img.jpg') }}" alt="">
 				</div>
 				<div class="col-xs-12 t2 cont-text-box">
 					<p class="company-info-box">Itembridge will fill your business with modern web technologies. Choosing the best, you get the best.</p>
