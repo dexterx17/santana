@@ -9,13 +9,13 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <p class="be_logos">
                     <img src="{{ asset('img/logo_simple_color.png') }}" alt="SANTANA estudio">
-                    <a href="" target="_blank" title="Facebook SANTANA estudio">
+                    <a href="https://www.facebook.com/Santanagrafico/" target="_blank" title="Facebook SANTANA estudio">
                         <img src="{{ asset('img/logo_face.png') }}" alt="Facebook SANTANA estudio">
                     </a>
-                    <a href="" target="_blank" title="Behance SANTANA estudio">
+                    <a href="https://www.behance.net/arte2599" target="_blank" title="Behance SANTANA estudio">
                         <img src="{{ asset('img/logo_behance.png') }}" alt="Behance SANTANA estudio">
                     </a>
-                    <a href="" target="_blank" title="Instagram SANTANA estudio">
+                    <a href="#" target="_blank" title="Instagram SANTANA estudio">
                         <img src="{{ asset('img/logo_instagram.png') }}" alt="Instagram SANTANA estudio">
                     </a>
                 </p>

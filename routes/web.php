@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Front@index')->name('landing');
+Route::get('/template/{opcion}', 'Front@templates')->name('template');
 
 Route::get('template',function(){
 	return view('base');

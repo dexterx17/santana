@@ -4,7 +4,7 @@
     </div>
     <div class="wrap-isotop">
         <div class="isotope my-height">
-            @foreach($trabajos as $trabajo)
+            @foreach($clientes as $trabajo)
             <div class="element-item design ">
                 <a class="" href="#" target="blank_">
                     <img alt="Ba;os" class="replace-2x" height="400" src="@if($trabajo->imagenes()->count()>0) {{ asset('img/uploads/'.$trabajo->imagenes()->first()->ruta) }} @else {{ asset('img/portafolio/banos.jpg') }} @endif" width="660">

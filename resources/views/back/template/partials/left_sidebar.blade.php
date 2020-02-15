@@ -56,6 +56,13 @@
                     <span>Usuarios</span>
                 </a>
             </li>
+            <li class="header">Front</li>
+            <li>
+                <a href="{{ route('landing') }}" target="_blank">
+                    <i class="material-icons col-light-blue">home</i>
+                    <span>Landing page</span>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- #Menu -->

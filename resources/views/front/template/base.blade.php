@@ -10,14 +10,15 @@
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,300,800,700' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/promo.css') }}" /> 
+	<link rel="Stylesheet" type="text/css" href="{{ asset('css/promo.css') }}" /> 
 	
-
+	
 	<!-- IE 10-11 style fix -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ie10.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ie11.css') }}" />
@@ -33,20 +34,19 @@
 	<![endif]-->
 </head>
 <body>
-    <div class="preloader">
-        <div class="background">
-            <div class="layer" style="background-color: #fff;">
-            </div>
-            <div class="layer">
-                <svg class="circular" height="50" width="50">
-                    <circle class="path" cx="25" cy="25" fill="none" r="20" stroke-miterlimit="10" stroke-width="2">
-                    </circle>
-                </svg>
-            </div>
-        </div>
-    </div>
+    <div id="fb-root"></div>
+	<div class="preloader" >
+	    <div class="background">
+	      <div class="layer" style="background-color: #fff;"></div>
+		      <div class="layer">
+		      	<svg height="50" width="50" class="circular">
+						  <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" class="path"></circle>
+						</svg>
+		      </div>
+	    </div>
+	</div>
     <!-- content-wrap -->
-    @include('front.template.partials.header')
+    @include('front.template.partials.header',['promo'=>'si'])
     <main class="promo">
 
     	@include('front.sections.banner_inicial')
@@ -54,8 +54,7 @@
     	@include('front.sections.nosotros')
 
     	@include('front.sections.portafolio')
-    	
-    	@include('front.sections.clients')
+
     	
     	@include('front.sections.contactos')
 
@@ -69,41 +68,17 @@
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
 	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
 	<script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.singlePageNav.min.js') }}"></script>
 	<script src="{{ asset('js/small-icons.js') }}"></script> 
+	<script src="{{ asset('js/jquery.textillate.js') }}"></script>
 	<script src="{{ asset('js/assets/jquery.fittext.js') }}"></script>
 	<script src="{{ asset('js/assets/jquery.lettering.js') }}"></script>
 	<script src="{{ asset('js/jquery.textillate.js') }}"></script> 
 	<script src="{{ asset('js/jquery.mCustomScrollbar.js') }}"></script> 
 	<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> 
 	<script src="{{ asset('js/jquery.appear.js') }}"></script> 
+
 	<script src="{{ asset('js/main.js') }}"></script>
 
-	<script src="{{ asset('js/jquery.singlePageNav.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
-
-	<script type="text/javascript">
-
-	if ( ! window.console ) console = { log: function(){} };
-
-	$('.promo-menu').singlePageNav({
-	    offset: $('.promo-menu').outerHeight(),
-	    filter: ':not(.external)',
-	    updateHash: true,
-
-	});
-
-
-	$body = $('body'),
-
-	/* SCROLL TOP and other files
-	------------------------------------------------------------------*/
-	$body.on('click', '.go-up', function(e) {
-	  var $link = $(this).attr('href');
-	  $('body, html').animate({
-	    scrollTop: $('body, html').offset().top
-	  }, 800);
-	  e.preventDefault();
-	});
-	</script>
 </body>
 </html>

@@ -26,10 +26,17 @@ class Front extends Controller
     }
 
     public function index(Request $request){
+        $this->datos['trabajos'] = Trabajo::all();
+        $this->datos['clientes'] = Cliente::all();
+
+        return view('front.home', $this->datos);
+    }
+
+    public function templates(Request $request, $opcion){
     	$this->datos['trabajos'] = Trabajo::all();
     	$this->datos['clientes'] = Cliente::all();
 
-    	return view('front.home', $this->datos);
+    	return view('front.template.'.$opcion, $this->datos);
     }
 
 }

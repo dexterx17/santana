@@ -6,6 +6,10 @@
 @section('css')
     <link href="{{ asset('plugins/chosen/chosen.css') }}" rel="stylesheet"/>
     <link href="{{ asset('plugins/dropzone/min/basic.min.css') }}" rel="stylesheet"/>
+
+        <!-- Light Gallery Plugin Css -->
+    <link href="{{ asset('plugins/light-gallery/css/lightgallery.css') }}" rel="stylesheet">
+
     <style type="text/css" media="screen">
         #map{
             width: 100%;
@@ -44,12 +48,24 @@
                 <div class="card">
                     <div class="header">
                         <h2>
+                            <img src="{{ asset('img/logos/'.$cliente->logo) }}" alt="" class="pull-right">
                             {{ $cliente->nombre }}
+                            <a href="{{ route('clientes.edit',$cliente->id) }}" class="btn btn-success waves-effect ">
+                                <i class="material-icons">edit</i>
+                            </a>
                             <small>Información</small>
                         </h2>
                     </div>
                     <div class="body">
-                        
+                        <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+                                @foreach($cliente->imagenes()->get() as $imagen )
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"  id="item{{ $imagen->id }}">
+                                    <a href="{{ asset('img/uploads/'.$imagen->ruta) }}" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="{{ asset('img/uploads/'.$imagen->ruta) }}">
+                                    </a>
+                                </div>
+                                @endforeach
+                            </div>
                     </div>
                 </div>
             </div>
@@ -72,11 +88,9 @@
                     </div>
                     <div class="body">
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                @foreach($cliente->trabajos()->get() as $trabajo )
-                                    @include('back.trabajos.miniblock', ['trabajo'=>$trabajo])
-                                @endforeach
-                            </div>
+                            @foreach($cliente->trabajos()->get() as $trabajo )
+                                @include('back.trabajos.slide', ['trabajo'=>$trabajo])
+                            @endforeach
                         </div>
                         <br/>
                     </div>
@@ -125,3 +139,10 @@
 
 @endsection
 
+@section('js')
+   <!-- Light Gallery Plugin Js -->
+    <script src="{{ asset('plugins/light-gallery/js/lightgallery-all.js') }}"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ asset('js/pages/medias/image-gallery.js') }}"></script>
+@endsection
