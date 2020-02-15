@@ -100,9 +100,18 @@
                     <div class="body">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                @foreach($cliente->trabajos()->get() as $trabajo )
-                                    @include('back.trabajos.miniblock', ['trabajo'=>$trabajo])
-                                @endforeach
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Fecha</th>
+                                            <th>Monto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <br/>
