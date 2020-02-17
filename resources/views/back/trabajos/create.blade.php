@@ -66,6 +66,18 @@
                             </div>
 
                             <div class="form-group form-float">
+                                <div class="form-line {{ $errors->has('cliente_id') ? ' error' : '' }}">
+                                    {!! Form::select('cliente_id',$select_categorias,'',['aria-describedby'=>'cliente_idHelp','class'=>'form-control','id'=>'cliente_id']) !!}
+                                    <label class="form-label">Categorias</label>
+                                    @if ($errors->has('cliente_id'))
+                                        <label class="error">
+                                            <strong>{{ $errors->first('cliente_id') }}</strong>
+                                        </label>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('nombre') ? ' error' : '' }}">
                                     <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="form-control" required="">
                                     <label class="form-label">Nombre del trabajo o proyecto</label>

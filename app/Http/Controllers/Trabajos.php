@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Trabajo;
 use App\Cliente;
+use App\Categoria;
 
 use Notify;
 
@@ -50,6 +51,7 @@ class Trabajos extends Controller
     public function create()
     {
         $this->datos['select_clientes']=Cliente::orderBy('nombre','ASC')->get()->pluck('nombre','id');
+        $this->datos['select_categorias']=Categoria::orderBy('nombre','ASC')->get()->pluck('nombre','id');
         return view('back.trabajos.create', $this->datos);
     }
 
@@ -91,6 +93,7 @@ class Trabajos extends Controller
     {
         $this->datos['trabajo'] = Trabajo::find($id);
         $this->datos['select_clientes']=Cliente::orderBy('nombre','ASC')->get()->pluck('nombre','id');
+        $this->datos['select_categorias']=Categoria::orderBy('nombre','ASC')->get()->pluck('nombre','id');
         
         return view('back.trabajos.edit',$this->datos);
     }

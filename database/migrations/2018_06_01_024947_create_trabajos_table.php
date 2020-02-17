@@ -13,6 +13,14 @@ class CreateTrabajosTable extends Migration
      */
     public function up()
     {
+        Schema::create('categorias', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre');
+            $table->string('slug')->nullable();
+            $table->text('resumen');
+            $table->timestamps();
+        });
+
         Schema::create('trabajos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
@@ -28,8 +36,16 @@ class CreateTrabajosTable extends Migration
             $table->integer('cliente_id')->unsigned();
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
             $table->timestamps();
+        }); 
+
+        Schema::create('categoria_trabajo', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('categoria_id')->unsigned();
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+            $table->integer('trabajo_id')->unsigned();
+            $table->foreign('trabajo_id')->references('id')->on('trabajos')->onDelete('cascade');
+            $table->timestamps();
         });
-        
     }
 
     /**
@@ -39,7 +55,8 @@ class CreateTrabajosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trabajo_cliente');
+        Schema::dropIfExists('categoria_trabajo');
         Schema::dropIfExists('trabajos');
+        Schema::dropIfExists('categorias');
     }
 }

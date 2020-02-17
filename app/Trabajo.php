@@ -21,6 +21,10 @@ class Trabajo extends Model
     	return $this->belongsTo('App\Cliente');
     }
 
+    public function categorias(){
+        return $this->belongsToMany('App\Categoria');
+    }
+
     /**
      * Devuelve las imagenes de un trabajo
      * @param  [type] $query [description]

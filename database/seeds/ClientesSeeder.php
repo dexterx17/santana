@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 
 use App\Cliente;
+use App\Imagen;
+
+use \Image;
 
 class ClientesSeeder extends Seeder
 {
@@ -26,6 +29,15 @@ class ClientesSeeder extends Seeder
         $cliente->contacto = "Paola Barragan";
         $cliente->save();
         //*******************************************************
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "";
+
+        $imagen->tabla_referencia = "";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
+
 
         //******************** Prefectura de Morona Santiago *****************
         $cliente = new Cliente();

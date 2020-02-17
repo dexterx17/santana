@@ -58,14 +58,14 @@
                     </div>
                     <div class="body">
                         <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
-                                @foreach($cliente->imagenes()->get() as $imagen )
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"  id="item{{ $imagen->id }}">
-                                    <a href="{{ asset('img/uploads/'.$imagen->ruta) }}" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="{{ asset('img/uploads/'.$imagen->ruta) }}">
-                                    </a>
-                                </div>
-                                @endforeach
+                            @foreach($cliente->imagenes()->get() as $imagen )
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"  id="item{{ $imagen->id }}">
+                                <a href="{{ asset('img/uploads/'.$imagen->ruta) }}" data-sub-html="Demo Description">
+                                    <img class="img-responsive thumbnail" src="{{ asset('img/uploads/'.$imagen->ruta) }}">
+                                </a>
                             </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

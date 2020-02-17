@@ -12,7 +12,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12 text-center">
-					<h1 class="tlt">SANTANA estudio</h1>
+					<h1 class="tlt"></h1>
 				</div>
 			</div>
 		</div>
