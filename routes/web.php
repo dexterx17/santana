@@ -31,6 +31,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	
 	Route::resource('trabajos','Trabajos');
 	Route::post('trabajos/{id}','Trabajos@update')->name('trabajos.update');
+	
+	Route::resource('categorias','Categorias');
 
 	/* rutas IMAGENES */
 	Route::get('imagenes/{id}/edit',[

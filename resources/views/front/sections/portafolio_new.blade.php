@@ -42,10 +42,12 @@
 		<div id="filters" class="button-group isotop-filters">
 			<div class="wrap-button">
 				<button class="button is-checked" data-filter="*">All</button>
+
 				<button class="button" data-filter=".branding">Branding</button>
 				<button class="button" data-filter=".design">Design</button>
 				<button class="button" data-filter=".development">Development</button>
 				<button class="button" data-filter=".photography">Photography</button>
+				
 	    	</div>
 			<div class="col-xs-12 text-center table-block">
 				<h1>

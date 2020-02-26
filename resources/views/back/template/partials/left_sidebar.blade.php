@@ -48,6 +48,12 @@
                     <span>Trabajos</span>
                 </a>
             </li>
+            <li class="@if(@$active_page==='categorias') active @endif">
+                <a href="{{ route('categorias.index') }}">
+                    <i class="material-icons">class</i>
+                    <span>Categorías</span>
+                </a>
+            </li>
             
             <li class="header">Admin</li>
             <li  class="@if(@$active_page==='usuarios') active @endif">

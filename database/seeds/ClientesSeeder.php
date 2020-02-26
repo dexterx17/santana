@@ -32,9 +32,8 @@ class ClientesSeeder extends Seeder
 
         $imagen = new Imagen();
         $imagen->nombre = "";
-        $imagen->ruta = "";
-
-        $imagen->tabla_referencia = "";
+        $imagen->ruta = "guaytambos.png";
+        $imagen->tabla_referencia = "clientes";
         $imagen->id_referencia = $cliente->id;
         $imagen->save();
 
@@ -51,6 +50,14 @@ class ClientesSeeder extends Seeder
         $cliente->web = "https://moronasantiago.gob.ec";
         $cliente->contacto = "Sid Calle";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "morona_santiago.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
+
         //*******************************************************
         
         //******************** HGPT *****************
@@ -65,6 +72,13 @@ class ClientesSeeder extends Seeder
         $cliente->web = "https://tungurahua.gob.ec";
         $cliente->contacto = "";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "hgpt.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //******************************************************* 
 
         //******************** HGPT *****************
@@ -80,6 +94,7 @@ class ClientesSeeder extends Seeder
         $cliente->web = "http://www.hmunicipal.gob.ec/";
         $cliente->contacto = "";
         $cliente->save();
+
         //*******************************************************
 
         //******************** SNAP *****************
@@ -95,6 +110,13 @@ class ClientesSeeder extends Seeder
         $cliente->web = "http://www.snap.ec/";
         $cliente->contacto = "";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "snap.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
 
         //******************** GADMA *****************
@@ -110,6 +132,13 @@ class ClientesSeeder extends Seeder
         $cliente->web = "https://ambato.gob.ec/";
         $cliente->contacto = "";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "ambato.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
 
         //******************** Gallo pinto *****************
@@ -124,6 +153,13 @@ class ClientesSeeder extends Seeder
         $cliente->web = "#";
         $cliente->contacto = "";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "gallo_pinto.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
 
         //******************** eeasa *****************
@@ -139,6 +175,13 @@ class ClientesSeeder extends Seeder
         $cliente->web = "http://www.eeasa.com.ec";
         $cliente->contacto = "";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "eeasa.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
 
         //******************** tisaleo *****************
@@ -154,6 +197,14 @@ class ClientesSeeder extends Seeder
         $cliente->web = "https://www.tisaleo.gob.ec/";
         $cliente->contacto = "";
         $cliente->save();
+
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "tisaleo.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
 
         //******************** pillaro *****************
@@ -169,6 +220,14 @@ class ClientesSeeder extends Seeder
         $cliente->web = "http://www.pillaro.gob.ec/";
         $cliente->contacto = "";
         $cliente->save();
+
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "gad_pillaro.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
 
         //******************** comite permanete *****************
@@ -184,6 +243,14 @@ class ClientesSeeder extends Seeder
         $cliente->web = "http://www.fiestasdeambato.com/";
         $cliente->contacto = "";
         $cliente->save();
+
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "comite_permanente.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
     
         //******************** comite permanete *****************
@@ -199,6 +266,13 @@ class ClientesSeeder extends Seeder
         $cliente->web = "#";
         $cliente->contacto = "";
         $cliente->save();
+
+        $imagen = new Imagen();
+        $imagen->nombre = "";
+        $imagen->ruta = "sophie.jpg";
+        $imagen->tabla_referencia = "clientes";
+        $imagen->id_referencia = $cliente->id;
+        $imagen->save();
         //*******************************************************
     
         /******************** HGPT *****************
